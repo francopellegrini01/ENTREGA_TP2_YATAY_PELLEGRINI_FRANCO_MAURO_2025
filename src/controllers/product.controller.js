@@ -143,12 +143,8 @@ export const ProductController = {
         throw new Error('Error! El stock solo puede modificarse de a 1');
       }
 
-      console.log('revisando producto 0: ', producto);
-
       producto.stockAmount = stockNuevoNumber;
       producto.producto = nuevoNombre;
-
-      console.log('revisando producto 1: ', producto);
 
       const { oldDataProduct, newDataProduct } = await database.updateProduct(producto);
 

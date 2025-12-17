@@ -36,14 +36,14 @@ Content-Type: application/json
 }
 
 
-### Peticion para reemplazar un producto
+### Actualizar +1 o -1 segun stock. Considerar monto actual, a la hora de enviar nuevo data
 PUT {{host}}/api/v1/productos/{{idProducto}}
 Content-Type: application/json
 Authorization: Bearer {{jwt_token}}
 
 {
-    "nuevoNombre": "Parilla de Luis",
-    "stockNuevo":4
+    "nuevoNombre": "te cambie el nombre 3 veces",
+    "stockNuevo":7
 }
 
 ### Peticion para eliminar un producto intento con JWT
