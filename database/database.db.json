@@ -1,0 +1,20 @@
+[
+  {
+    "id": "7930c86f",
+    "producto": "Notebook DELL de Mauricio",
+    "stockAmount": 5,
+    "fechaIngreso": "2025-12-16T22:41:03.977Z"
+  },
+  {
+    "id": "61e5a784",
+    "producto": "AirPods MAC de Natalia",
+    "stockAmount": 6,
+    "fechaIngreso": "2025-12-16T22:55:13.095Z"
+  },
+  {
+    "id": "8842c8c8",
+    "producto": "Parilla de Luis",
+    "stockAmount": 4,
+    "fechaIngreso": "2025-12-16T22:55:36.087Z"
+  }
+]

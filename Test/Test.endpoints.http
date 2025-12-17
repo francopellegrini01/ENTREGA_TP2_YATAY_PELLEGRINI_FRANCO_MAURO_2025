@@ -1,0 +1,56 @@
+@host=http://127.0.0.1:3001
+@idProducto=61e5a784
+
+//NO REQUIEREN VALIDACION:
+
+### Peticion del tipo POST - 201 en caso de OK
+POST {{host}}/api/v1/productos
+Content-Type: application/json
+
+{
+    "producto": "Termotanque de Omar",
+    "stockAmount": 2
+}
+
+### Listar productos (sin validacion) - 200 en caso de OK
+GET {{host}}/api/v1/productos
+
+
+### Obtener producto - Respuesta 200 OK o 404 Error.
+GET {{host}}/api/v1/productos/{{idProducto}}
+
+
+
+
+//REQUIEREN VALIDACION
+# LOG IN CON JWT
+@jwt_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1OTI2NjI0LCJleHAiOjE3NjYwMTMwMjR9.g0KzIuUEA4zWc3ZRH6LDdc0INuZ5tQfmm1puu6Gvzrc
+
+### LOGIN COMO ADMIN PARA OBTENER EL JWT - esto se compara con archivo config
+POST {{host}}/user/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin123"
+}
+
+
+### Peticion para reemplazar un producto
+PUT {{host}}/api/v1/productos/{{idProducto}}
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+    "nuevoNombre": "Parilla de Luis",
+    "stockNuevo":4
+}
+
+### Peticion para eliminar un producto intento con JWT
+DELETE {{host}}/api/v1/productos/{{idProducto}}
+Authorization: Bearer {{jwt_token}}
+
+### Albums CSV
+GET http://localhost:3001/api/v1/albums/csv
+
+
